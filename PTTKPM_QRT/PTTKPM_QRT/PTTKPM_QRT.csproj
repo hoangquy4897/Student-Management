@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F9E31AE-7771-473A-8BD4-218BE07D1C5F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PTTKPM_QRT</RootNamespace>
+    <AssemblyName>PTTKPM_QRT</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\AbsentBUS.cs" />
+    <Compile Include="BUS\AccountBUS.cs" />
+    <Compile Include="BUS\ClassBUS.cs" />
+    <Compile Include="BUS\GradeBUS.cs" />
+    <Compile Include="BUS\RuleBUS.cs" />
+    <Compile Include="BUS\ScoreBUS.cs" />
+    <Compile Include="BUS\ScoreDetailBUS.cs" />
+    <Compile Include="BUS\SemesterBUS.cs" />
+    <Compile Include="BUS\StudentBUS.cs" />
+    <Compile Include="BUS\SubjectBUS.cs" />
+    <Compile Include="BUS\TypeTestBUS.cs" />
+    <Compile Include="DAO\AbsentDAO.cs" />
+    <Compile Include="DAO\ScoreDetailDAO.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\ScoreDetail.cs" />
+    <Compile Include="GUI\Absent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Absent.Designer.cs">
+      <DependentUpon>Absent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AddingStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddingStudent.Designer.cs">
+      <DependentUpon>AddingStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChangingRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChangingRule.Designer.cs">
+      <DependentUpon>ChangingRule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ClassList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ClassList.Designer.cs">
+      <DependentUpon>ClassList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ClassScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ClassScore.Designer.cs">
+      <DependentUpon>ClassScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\ClassDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\GradeDAO.cs" />
+    <Compile Include="DAO\RuleDAO.cs" />
+    <Compile Include="DAO\ScoreDAO.cs" />
+    <Compile Include="DAO\SemesterDAO.cs" />
+    <Compile Include="DAO\StudentDAO.cs" />
+    <Compile Include="DAO\SubjectDAO.cs" />
+    <Compile Include="DAO\TypeTestDAO.cs" />
+    <Compile Include="GUI\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dashboard_Student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dashboard_Student.Designer.cs">
+      <DependentUpon>Dashboard_Student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\Absent.cs" />
+    <Compile Include="DTO\Classes.cs" />
+    <Compile Include="DTO\Grade.cs" />
+    <Compile Include="DTO\Rule.cs" />
+    <Compile Include="DTO\Score.cs" />
+    <Compile Include="DTO\Semester.cs" />
+    <Compile Include="DTO\Student.cs" />
+    <Compile Include="DTO\Subject.cs" />
+    <Compile Include="DTO\TypeTest.cs" />
+    <Compile Include="GUI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLHSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLHSDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHSDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SearchingScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SearchingScore.Designer.cs">
+      <DependentUpon>SearchingScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SearchingStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SearchingStudent.Designer.cs">
+      <DependentUpon>SearchingStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="GUI\StatisticSemester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\StatisticSemester.Designer.cs">
+      <DependentUpon>StatisticSemester.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StatisticSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\StatisticSubject.Designer.cs">
+      <DependentUpon>StatisticSubject.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUI\Absent.resx">
+      <DependentUpon>Absent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddingStudent.resx">
+      <DependentUpon>AddingStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChangingRule.resx">
+      <DependentUpon>ChangingRule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ClassList.resx">
+      <DependentUpon>ClassList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ClassScore.resx">
+      <DependentUpon>ClassScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dashboard_Student.resx">
+      <DependentUpon>Dashboard_Student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="GUI\SearchingScore.resx">
+      <DependentUpon>SearchingScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SearchingStudent.resx">
+      <DependentUpon>SearchingStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StatisticSemester.resx">
+      <DependentUpon>StatisticSemester.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StatisticSubject.resx">
+      <DependentUpon>StatisticSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="QLHSDataSet.xsc">
+      <DependentUpon>QLHSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLHSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLHSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLHSDataSet.xss">
+      <DependentUpon>QLHSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLHSDataSet2.xsc">
+      <DependentUpon>QLHSDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QLHSDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLHSDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLHSDataSet2.xss">
+      <DependentUpon>QLHSDataSet2.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
